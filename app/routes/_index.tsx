@@ -129,12 +129,12 @@ export default function Index() {
                   purus in mollis.
                 </p>
               </Blockquote>
-              {/* <Blockquote cite="https://example.com">
-      <p>All models are wrong. Some are useful.</p>
-      <footer>
-        —Someone, <cite>Somewhere</cite>
-      </footer>
-    </Blockquote> */}
+              <Blockquote cite="https://example.com">
+                <p>All models are wrong. Some are useful.</p>
+                <footer>
+                  —Someone, <cite>Somewhere</cite>
+                </footer>
+              </Blockquote>
             </Stack>
           </CardBody>
         </Card>
@@ -893,6 +893,7 @@ export default function Index() {
           <CardHeader>Alert</CardHeader>
           <CardBody>
             <Stack style={{ gap: 50 }}>
+              <Alert>Example</Alert>
               <Alert>
                 <AlertHeader>Success</AlertHeader>
                 <AlertBody>Your profile has been saved.</AlertBody>
@@ -948,6 +949,7 @@ export default function Index() {
           <CardHeader>Card</CardHeader>
           <CardBody>
             <Stack style={{ gap: 50 }}>
+              <Card>Example</Card>
               <Card>
                 <CardBody>A summary of your account.</CardBody>
               </Card>
