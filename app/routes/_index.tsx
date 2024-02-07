@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import {Button} from "@adamzerner/rfui-react";
+import { Badge } from "@adamzerner/rfui-react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div>
-      <Button />
+      <Badge type="danger" size="lg">Example</Badge>
     </div>
   );
 }
