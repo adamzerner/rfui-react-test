@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Container, Badge, Stack, Text, Flex, Link, Card, CardHeader, CardBody, Blockquote, Button, Checkbox, CodeBlock, H1, H2, Highlight, InlineCode, Input, OL, RadioButton, Select, Switch, Table, Textarea, UL, Alert, AlertHeader, AlertBody, CardFooter, FormField, CheckboxCardGroup, CheckboxCardGroupItem, Footer, FooterColumn, FooterHeading, FooterItem, Modal, Navbar, NavbarLeft, NavbarItem, PasswordInput, Stepper, Tabs, TabSection } from "@adamzerner/rfui-react";
+import { Container, Badge, Stack, RadioButtonCardGroup, RadioButtonCardGroupItem, Text, Flex, Link, Card, CardHeader, CardBody, Blockquote, Button, Checkbox, CodeBlock, H1, H2, Highlight, InlineCode, Input, OL, RadioButton, Select, Switch, Table, Textarea, UL, Alert, AlertHeader, AlertBody, CardFooter, FormField, CheckboxCardGroup, CheckboxCardGroupItem, Footer, FooterColumn, FooterHeading, FooterItem, Modal, Navbar, NavbarLeft, NavbarItem, PasswordInput, Stepper, Tabs, TabSection } from "@adamzerner/rfui-react";
 import { useState } from "react";
 
 export const meta: MetaFunction = () => {
@@ -18,6 +18,7 @@ export default function Index() {
   const [formFieldValue, setFormFieldValue] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [passwordInputValue, setPasswordInputValue] = useState('');
+  const [radioButtonCardGroupSelectedItem, setRadioButtonCardGroupSelectedItem] = useState<string | null>(null);
 
   return (
     <>
@@ -1337,6 +1338,24 @@ export default function Index() {
               </Stack>
               <PasswordInput invalid />
             </Stack>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader>RadioButtonCardGroup</CardHeader>
+          <CardBody>
+            <RadioButtonCardGroup selectedItemName={radioButtonCardGroupSelectedItem} onChange={(v) => {
+              setRadioButtonCardGroupSelectedItem(v);
+            }}>
+              <RadioButtonCardGroupItem name="favorite-number" value="one">
+                One
+              </RadioButtonCardGroupItem>
+              <RadioButtonCardGroupItem name="favorite-number" value="two">
+                Two
+              </RadioButtonCardGroupItem>
+              <RadioButtonCardGroupItem name="favorite-number" value="three">
+                Three
+              </RadioButtonCardGroupItem>
+            </RadioButtonCardGroup>
           </CardBody>
         </Card>
         <Card>
