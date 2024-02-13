@@ -8,10 +8,17 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { getStylesheetUrl } from "@adamzerner/rfui-react";
 
-export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-];
+export const links: LinksFunction = () => {
+  const theLinks = [{ rel: "stylesheet", href: getStylesheetUrl() }];
+
+  if (cssBundleHref) {
+    theLinks.push({ rel: "stylesheet", href: cssBundleHref });
+  }
+
+  return theLinks;
+}
 
 export default function App() {
   return (
@@ -19,7 +26,6 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://rfui.deno.dev/rfui-v0-1-15.css" />
         <Meta />
         <Links />
       </head>
